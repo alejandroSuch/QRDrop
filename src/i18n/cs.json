@@ -48,5 +48,10 @@
   "aria_size_m": "Střední velikost",
   "aria_size_l": "Velká velikost",
   "aria_language_selector": "Vybrat jazyk",
-  "aria_theme_toggle": "Přepnout tmavý režim"
+  "aria_theme_toggle": "Přepnout tmavý režim",
+  "qrColor": "Barva QR",
+  "bgColor": "Pozadí",
+  "logo": "Logo (volitelné)",
+  "removeLogo": "Odstranit",
+  "logoNote": "Stažení SVG není dostupné s logem"
 }

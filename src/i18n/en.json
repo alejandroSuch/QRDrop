@@ -48,5 +48,10 @@
   "aria_size_m": "Medium size",
   "aria_size_l": "Large size",
   "aria_language_selector": "Select language",
-  "aria_theme_toggle": "Toggle dark mode"
+  "aria_theme_toggle": "Toggle dark mode",
+  "qrColor": "QR Color",
+  "bgColor": "Background",
+  "logo": "Logo (optional)",
+  "removeLogo": "Remove",
+  "logoNote": "SVG download not available with logo"
 }

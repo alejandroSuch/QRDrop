@@ -5,9 +5,10 @@ interface Props {
   dataUrl: string | null;
   svgString: string | null;
   noContentMessage: string;
+  hasLogo?: boolean;
 }
 
-export default function QRPreview({ dataUrl, svgString, noContentMessage }: Props) {
+export default function QRPreview({ dataUrl, svgString, noContentMessage, hasLogo = false }: Props) {
   const { t } = useTranslation();
   const [copied, setCopied] = useState(false);
 
@@ -60,9 +61,15 @@ export default function QRPreview({ dataUrl, svgString, noContentMessage }: Prop
         <button onClick={downloadPng} aria-label={t("aria_download_png")} className="px-4 py-2 text-sm font-medium bg-violet-600 text-white rounded-lg hover:bg-violet-700 transition-colors">
           {t("download_png")}
         </button>
-        <button onClick={downloadSvg} aria-label={t("aria_download_svg")} className="px-4 py-2 text-sm font-medium bg-violet-600 text-white rounded-lg hover:bg-violet-700 transition-colors">
-          {t("download_svg")}
-        </button>
+        {hasLogo ? (
+          <span className="px-4 py-2 text-sm text-gray-400 dark:text-gray-500 italic">
+            {t("logoNote")}
+          </span>
+        ) : (
+          <button onClick={downloadSvg} aria-label={t("aria_download_svg")} className="px-4 py-2 text-sm font-medium bg-violet-600 text-white rounded-lg hover:bg-violet-700 transition-colors">
+            {t("download_svg")}
+          </button>
+        )}
         <button onClick={copyToClipboard} aria-label={t("aria_copy_clipboard")} className="px-4 py-2 text-sm font-medium bg-gray-200 dark:bg-gray-700 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
           {copied ? t("copied") : t("copy_clipboard")}
         </button>

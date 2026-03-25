@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useDarkMode } from "./hooks/useDarkMode";
 import { useQRCode } from "./hooks/useQRCode";
@@ -11,6 +11,7 @@ import WifiForm from "./components/WifiForm";
 import VCardForm from "./components/VCardForm";
 import QRPreview from "./components/QRPreview";
 import SizeSelector from "./components/SizeSelector";
+import StyleControls from "./components/StyleControls";
 
 export type QRTab = "text" | "url" | "wifi" | "vcard";
 
@@ -23,8 +24,22 @@ export default function App() {
   const [tab, setTab] = useState<QRTab>("text");
   const [content, setContent] = useState("");
   const [size, setSize] = useState<SizeKey>("m");
+  const [fgColor, setFgColor] = useState("#000000");
+  const [bgColor, setBgColor] = useState("#ffffff");
+  const [logoFile, setLogoFile] = useState<File | null>(null);
+  const [logoPreview, setLogoPreview] = useState<string | null>(null);
 
-  const qr = useQRCode(content, SIZES[size]);
+  useEffect(() => {
+    if (!logoFile) {
+      setLogoPreview(null);
+      return;
+    }
+    const url = URL.createObjectURL(logoFile);
+    setLogoPreview(url);
+    return () => URL.revokeObjectURL(url);
+  }, [logoFile]);
+
+  const qr = useQRCode(content, SIZES[size], fgColor, bgColor, logoFile);
 
   const handleContentChange = useCallback((value: string) => {
     setContent(value);
@@ -46,6 +61,15 @@ export default function App() {
             {tab === "vcard" && <VCardForm onChange={handleContentChange} />}
 
             <SizeSelector size={size} setSize={setSize} />
+            <StyleControls
+              fgColor={fgColor}
+              bgColor={bgColor}
+              logoFile={logoFile}
+              logoPreview={logoPreview}
+              setFgColor={setFgColor}
+              setBgColor={setBgColor}
+              setLogoFile={setLogoFile}
+            />
           </div>
 
           {/* QR preview side */}
@@ -54,6 +78,7 @@ export default function App() {
               dataUrl={qr.dataUrl}
               svgString={qr.svgString}
               noContentMessage={t("no_content")}
+              hasLogo={logoFile !== null}
             />
           </div>
         </div>

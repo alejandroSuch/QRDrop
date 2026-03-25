@@ -48,5 +48,10 @@
   "aria_size_m": "Tamanho médio",
   "aria_size_l": "Tamanho grande",
   "aria_language_selector": "Selecionar idioma",
-  "aria_theme_toggle": "Alternar modo escuro"
+  "aria_theme_toggle": "Alternar modo escuro",
+  "qrColor": "Cor do QR",
+  "bgColor": "Fundo",
+  "logo": "Logo (opcional)",
+  "removeLogo": "Remover",
+  "logoNote": "Download SVG não disponível com logo"
 }

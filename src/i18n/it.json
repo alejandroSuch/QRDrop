@@ -48,5 +48,10 @@
   "aria_size_m": "Dimensione media",
   "aria_size_l": "Dimensione grande",
   "aria_language_selector": "Seleziona lingua",
-  "aria_theme_toggle": "Attiva/disattiva modalità scura"
+  "aria_theme_toggle": "Attiva/disattiva modalità scura",
+  "qrColor": "Colore QR",
+  "bgColor": "Sfondo",
+  "logo": "Logo (opzionale)",
+  "removeLogo": "Rimuovi",
+  "logoNote": "Download SVG non disponibile con logo"
 }

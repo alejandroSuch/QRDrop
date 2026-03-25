@@ -48,5 +48,10 @@
   "aria_size_m": "Mittlere Größe",
   "aria_size_l": "Große Größe",
   "aria_language_selector": "Sprache wählen",
-  "aria_theme_toggle": "Dunkelmodus umschalten"
+  "aria_theme_toggle": "Dunkelmodus umschalten",
+  "qrColor": "QR-Farbe",
+  "bgColor": "Hintergrund",
+  "logo": "Logo (optional)",
+  "removeLogo": "Entfernen",
+  "logoNote": "SVG-Download mit Logo nicht verfügbar"
 }
