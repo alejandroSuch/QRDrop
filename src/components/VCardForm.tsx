@@ -35,10 +35,10 @@ export default function VCardForm({ onChange }: Props) {
 
   return (
     <div className="space-y-3">
-      <input type="text" value={first} onChange={(e) => setFirst(e.target.value)} placeholder={t("vcard_first")} className={inputClass} />
-      <input type="text" value={last} onChange={(e) => setLast(e.target.value)} placeholder={t("vcard_last")} className={inputClass} />
-      <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder={t("vcard_phone")} className={inputClass} />
-      <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={t("vcard_email")} className={inputClass} />
+      <input type="text" value={first} onChange={(e) => setFirst(e.target.value)} placeholder={t("vcard_first")} aria-label={t("aria_vcard_first")} className={inputClass} />
+      <input type="text" value={last} onChange={(e) => setLast(e.target.value)} placeholder={t("vcard_last")} aria-label={t("aria_vcard_last")} className={inputClass} />
+      <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder={t("vcard_phone")} aria-label={t("aria_vcard_phone")} className={inputClass} />
+      <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={t("vcard_email")} aria-label={t("aria_vcard_email")} className={inputClass} />
     </div>
   );
 }

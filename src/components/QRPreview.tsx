@@ -57,13 +57,13 @@ export default function QRPreview({ dataUrl, svgString, noContentMessage }: Prop
         <img src={dataUrl} alt="QR Code" className="max-w-xs w-full" />
       </div>
       <div className="flex gap-2 flex-wrap justify-center">
-        <button onClick={downloadPng} className="px-4 py-2 text-sm font-medium bg-violet-600 text-white rounded-lg hover:bg-violet-700 transition-colors">
+        <button onClick={downloadPng} aria-label={t("aria_download_png")} className="px-4 py-2 text-sm font-medium bg-violet-600 text-white rounded-lg hover:bg-violet-700 transition-colors">
           {t("download_png")}
         </button>
-        <button onClick={downloadSvg} className="px-4 py-2 text-sm font-medium bg-violet-600 text-white rounded-lg hover:bg-violet-700 transition-colors">
+        <button onClick={downloadSvg} aria-label={t("aria_download_svg")} className="px-4 py-2 text-sm font-medium bg-violet-600 text-white rounded-lg hover:bg-violet-700 transition-colors">
           {t("download_svg")}
         </button>
-        <button onClick={copyToClipboard} className="px-4 py-2 text-sm font-medium bg-gray-200 dark:bg-gray-700 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+        <button onClick={copyToClipboard} aria-label={t("aria_copy_clipboard")} className="px-4 py-2 text-sm font-medium bg-gray-200 dark:bg-gray-700 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
           {copied ? t("copied") : t("copy_clipboard")}
         </button>
       </div>

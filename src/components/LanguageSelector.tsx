@@ -11,12 +11,13 @@ const LANGUAGES = [
 ];
 
 export default function LanguageSelector() {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   return (
     <select
       value={i18n.language?.split("-")[0] ?? "en"}
       onChange={(e) => i18n.changeLanguage(e.target.value)}
+      aria-label={t("aria_language_selector")}
       className="text-sm bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg px-2 py-1.5 focus:outline-none focus:ring-2 focus:ring-violet-500"
     >
       {LANGUAGES.map((lang) => (

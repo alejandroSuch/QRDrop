@@ -28,6 +28,7 @@ export default function TabSelector({ tab, setTab, onTabChange }: Props) {
             setTab(key);
             onTabChange();
           }}
+          aria-label={t(`aria_tab_${key}`)}
           className={`flex-1 px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
             tab === key
               ? "bg-violet-600 text-white shadow-sm"

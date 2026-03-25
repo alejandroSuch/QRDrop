@@ -18,6 +18,7 @@ export default function SizeSelector({ size, setSize }: Props) {
           <button
             key={key}
             onClick={() => setSize(key)}
+            aria-label={t(`aria_size_${key}`)}
             className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
               size === key
                 ? "bg-violet-600 text-white"

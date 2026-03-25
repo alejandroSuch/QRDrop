@@ -26,7 +26,7 @@ export default function Header({ dark, toggleDark }: Props) {
           <button
             onClick={toggleDark}
             className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-            aria-label="Toggle dark mode"
+            aria-label={t("aria_theme_toggle")}
           >
             {dark ? (
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
