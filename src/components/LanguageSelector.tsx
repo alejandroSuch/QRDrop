@@ -1,13 +1,13 @@
 import { useTranslation } from "react-i18next";
 
 const LANGUAGES = [
-  { code: "en", label: "EN" },
-  { code: "es", label: "ES" },
-  { code: "fr", label: "FR" },
-  { code: "it", label: "IT" },
-  { code: "pt", label: "PT" },
-  { code: "de", label: "DE" },
-  { code: "cs", label: "CS" },
+  { code: "en", label: "English" },
+  { code: "es", label: "Español" },
+  { code: "fr", label: "Français" },
+  { code: "it", label: "Italiano" },
+  { code: "pt", label: "Português" },
+  { code: "de", label: "Deutsch" },
+  { code: "cs", label: "Čeština" },
 ];
 
 export default function LanguageSelector() {
@@ -18,7 +18,7 @@ export default function LanguageSelector() {
       value={i18n.language?.split("-")[0] ?? "en"}
       onChange={(e) => i18n.changeLanguage(e.target.value)}
       aria-label={t("aria_language_selector")}
-      className="text-sm bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg px-2 py-1.5 focus:outline-none focus:ring-2 focus:ring-violet-500"
+      className="rounded-md border border-gray-300 bg-white px-2 py-1 text-xs text-gray-700 focus:border-violet-500 focus:outline-none focus:ring-1 focus:ring-violet-500 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300"
     >
       {LANGUAGES.map((lang) => (
         <option key={lang.code} value={lang.code}>
