@@ -25,7 +25,7 @@ export default function WifiForm({ onChange }: Props) {
     onChange(wifiString);
   }, [ssid, password, encryption, onChange]);
 
-  const inputClass = "w-full rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-violet-500";
+  const inputClass = "w-full rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-violet-500";
 
   return (
     <div className="space-y-3">
@@ -61,7 +61,7 @@ export default function WifiForm({ onChange }: Props) {
           value={encryption}
           onChange={(e) => setEncryption(e.target.value)}
           aria-label={t("aria_wifi_encryption")}
-          className="rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-violet-500"
+          className="rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-violet-500"
         >
           <option value="WPA">WPA/WPA2</option>
           <option value="WEP">WEP</option>
